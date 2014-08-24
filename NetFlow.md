@@ -5,7 +5,7 @@ Sử dụng công cụ NetFlow monitor Open vSwitch
 
 # 1. Giới thiệu NetFlow
 
-
+Cisco NetFlow là một công nghệ do Cisco phát triển với nhiều tính năng giúp chúng ta có thể giám sát băng thông của mạng thông qua công cụ NetFlow Analyzer.
 
 # 2. Bài Lab sử dụng NetFlow để monitor Open vSwitch
 
@@ -72,16 +72,16 @@ Với 10.0.0.1 là IP của monitoring host, eth1 là card mạng nối với mo
 
 Cấu hình xóa NetFlow trên OpenvSwitch
 
-ovs-vsctl -- clear Bridge br-ex netflow
+    ovs-vsctl -- clear Bridge br-ex netflow
 
 Liệt kê các NetFlow
 
-ovs-vsctl list netflow
+    ovs-vsctl list netflow
 
 
 #### 2.4.2. Trên host Monitoring
 
-Download bộ cài đặt của NetFlow tại [địa chỉ] (http://www.manageengine.com/products/netflow/download.html)
+Download bộ cài đặt của NetFlow Analyzer tại [địa chỉ] (http://www.manageengine.com/products/netflow/download.html)
 
 Cài đặt bình thường với các tham số mặc định như cổng nghe là 9996, cổng quản lý là 8080
 

@@ -58,7 +58,7 @@ Tạo hai máy ảo:
     mv cirros-0.3.0-x86_64-disk.img cirros1.img
     cp cirros1 cirros2
     kvm -m 512 -net nic,macaddr=12:42:52:CC:CC:12 -net tap cirros1 –nographic
-    kvm -m 512 -net nic,macaddr=12:42:52:CC:CC:12 -net tap cirros2 –nographic
+    kvm -m 512 -net nic,macaddr=12:42:52:CC:CC:13 -net tap cirros2 –nographic
 
 Sau khi tạo mỗi VM thì sẽ bị mất phiên ssh vào máy chủ, thay vào đó sẽ là phiên của mỗi máy ảo, ta cần mở một kết nối khác tới máy chủ để cấu hình.
 
@@ -81,6 +81,14 @@ Với COLLECTOR_IP là IP của monitoring host, eth1 là card mạng nối vớ
 
     chmod +x sflow.sh
     ./sflow.sh
+    
+Show tất cả Sflow đã đặt trên Open vSwitch:
+    
+    ovs-vsctl list sflow
+
+Xóa sflow trên Open vSwitch
+
+    ovs-vsctl remove bridge br0 sflow $SFLOWUUID
     
 #### 2.4.2. Trên host Monitoring
 
